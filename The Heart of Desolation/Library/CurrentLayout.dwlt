@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 21812
+  controlID: 4564
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
-  controlID: 21813
+  controlID: 4625
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1643
     height: 676
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 21814
+  controlID: 4626
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 21835
+  controlID: 4603
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -417,7 +417,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 3874f9fff0e3f9ffb0ebf9ff32f3f9ffae87faffb864fbffacf1fbff6ef2ffffacf7ffffb6f8ffff18fcffff00000000342800006c280000b4280000704e0000b2520000
+    m_ExpandedIDs: 16fcffff000000001427000024270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,14 +467,14 @@ MonoBehaviour:
     width: 1437
     height: 655
   m_SceneLighting: 1
-  lastFramingTime: 201.27519826623137
+  lastFramingTime: 8636.106723090466
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 178.19553, y: 2.7488618, z: 0}
+    m_Target: {x: 1.9218484, y: -2.8867228, z: -10}
     speed: 2
-    m_Value: {x: 178.19553, y: 2.7488618, z: 0}
+    m_Value: {x: 1.9218484, y: -2.8867228, z: -10}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -501,9 +501,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 919.07666
+    m_Target: 14.637953
     speed: 2
-    m_Value: 919.07666
+    m_Value: 14.637953
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 202
+    x: 204
     y: 92
-    width: 1439
+    width: 1437
     height: 655
 --- !u!114 &18
 MonoBehaviour:
@@ -578,20 +578,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/MyAssets/Scenes
+    - Assets/MyAssets/Scripts/Misc
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/MyAssets/Scenes
+  - Assets/MyAssets/Scripts/Misc
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\matt__000\Documents\GitHub\The-Heart-of-Desolation\The
     Heart of Desolation
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 48260000
-    m_LastClickedID: 9800
-    m_ExpandedIDs: 000000002e2600004226000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 7}
+    m_SelectedIDs: 76260000
+    m_LastClickedID: 9846
+    m_ExpandedIDs: 0000000030260000602600007426000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002e2600004226000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000030260000602600007426000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -647,7 +647,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 6224000072240000742400009eb700008ade00006228000000000000
+    m_ExpandedInstanceIDs: 6224000072240000742400009eb700008ade000062280000f436000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
