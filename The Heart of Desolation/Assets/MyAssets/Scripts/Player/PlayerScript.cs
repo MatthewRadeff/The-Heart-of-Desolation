@@ -23,9 +23,6 @@ public class PlayerScript : MonoBehaviour
     public LayerMask m_whatIsGround;
 
 
-   
-
-
 	// Use this for initialization
 	void Start ()
     {
@@ -64,18 +61,6 @@ public class PlayerScript : MonoBehaviour
         }
 		
 	}
-
-    
-
-
-
-
-
-
-
-
-
-
 
 
 }

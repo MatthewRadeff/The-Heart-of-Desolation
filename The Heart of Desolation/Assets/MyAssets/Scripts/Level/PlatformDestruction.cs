@@ -11,7 +11,7 @@ public class PlatformDestruction : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        m_platformDestructionPoint = GameObject.Find("DestructionPoint");
+        m_platformDestructionPoint = GameObject.Find("PlatformDestructionPoint");
 
 
 	}
@@ -21,9 +21,11 @@ public class PlatformDestruction : MonoBehaviour
     {
 		if(transform.position.x < m_platformDestructionPoint.transform.position.x)
         {
-            Destroy(gameObject);
-            Debug.Log("Platform destroyed!");
+            //Destroy(gameObject);
+            //Debug.Log("Platform destroyed!");
 
+            // deactivate platform
+            gameObject.SetActive(false);
 
         }
 
