@@ -22,6 +22,8 @@ public class PlatformGenerator : MonoBehaviour
     public float m_distanceBetweenMin;
     public float m_distanceBetweenMax;
 
+    // referencing the object pooler script
+    public ObjectPooler m_theObjectPool;
 
 
 	// Use this for initialization
@@ -44,8 +46,17 @@ public class PlatformGenerator : MonoBehaviour
             transform.position = new Vector3(transform.position.x + m_platformWidth + m_distanceBetween, transform.position.y, transform.position.z);
 
             // creating the platform
-            Instantiate(m_thePlatform, transform.position, transform.rotation);
-            Debug.Log("Long platform created!");
+            //Instantiate(m_thePlatform, transform.position, transform.rotation);
+            //Debug.Log("Long platform created!");
+
+            // creating "new platform" from using the pooling
+            // setting position rotation 
+            GameObject m_newPlatform = m_theObjectPool.GetPooledObject();
+            m_newPlatform.transform.position = transform.position;
+            m_newPlatform.transform.rotation = transform.rotation;
+            // also setting it to true because up until now it has been not active
+            m_newPlatform.SetActive(true);
+
 
         }
 
