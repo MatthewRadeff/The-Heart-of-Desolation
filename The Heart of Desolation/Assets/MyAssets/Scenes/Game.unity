@@ -519,8 +519,11 @@ MonoBehaviour:
   m_generationPoint: {fileID: 1510826309}
   m_distanceBetween: 5
   m_distanceBetweenMin: 1
-  m_distanceBetweenMax: 10
-  m_theObjectPool: {fileID: 1915865204}
+  m_distanceBetweenMax: 7
+  m_thePlatforms:
+  - {fileID: 1258009207049432, guid: bf5866acde8531f4e8c70696659ebbce, type: 2}
+  - {fileID: 1239523748058270, guid: 0d1132ef25be9e44c95edcfbc15b7039, type: 2}
+  - {fileID: 1592957176794380, guid: 775ae378cfc567d43b50f8dc329e2991, type: 2}
 --- !u!4 &596193136
 Transform:
   m_ObjectHideFlags: 0
