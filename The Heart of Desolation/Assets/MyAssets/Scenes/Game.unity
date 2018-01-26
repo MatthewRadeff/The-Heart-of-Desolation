@@ -568,6 +568,8 @@ MonoBehaviour:
   - {fileID: 1915865204}
   - {fileID: 460450399}
   - {fileID: 1191586194}
+  m_maxHeightPoint: {fileID: 842193894}
+  m_maxHeightChange: 3
 --- !u!4 &596193136
 Transform:
   m_ObjectHideFlags: 0
@@ -577,7 +579,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 60.66, y: -4.71, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 842193894}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -809,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerSpeed: 5
   m_jumpForce: 6
+  m_jumpTime: 0.25
   m_isGrounded: 0
   m_whatIsGround:
     serializedVersion: 2
@@ -858,6 +862,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &842193893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 842193894}
+  m_Layer: 0
+  m_Name: MaxHeightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842193894
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842193893}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.71, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 596193136}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058182091
 GameObject:
   m_ObjectHideFlags: 0

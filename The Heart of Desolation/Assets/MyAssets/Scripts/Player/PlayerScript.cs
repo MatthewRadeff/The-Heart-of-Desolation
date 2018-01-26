@@ -10,6 +10,11 @@ public class PlayerScript : MonoBehaviour
     // force of player jump
     public float m_jumpForce = 10.0f;
 
+    // how long player can jump for
+    public float m_jumpTime;
+    private float m_jumpTimeCounter;
+
+
     // rigidbody of the player 
     private Rigidbody2D m_rb;
 
@@ -32,6 +37,7 @@ public class PlayerScript : MonoBehaviour
         // finds collider 2d on player
         m_collider2D = GetComponent<Collider2D>();
 
+        m_jumpTimeCounter = m_jumpTime;
 	}
 	
 	// Update is called once per frame
@@ -59,8 +65,29 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Player cant jump!");
 
         }
-		
-	}
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            if(m_jumpTimeCounter > 0)
+            {
+                m_rb.velocity = new Vector2(m_rb.velocity.x, m_jumpForce);
+                m_jumpTimeCounter -= Time.deltaTime;
+            }
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            m_jumpTimeCounter = 0;
+        }
+
+        if(m_isGrounded)
+        {
+            m_jumpTimeCounter = m_jumpTime;
+        }
+
+
+    }
 
 
 }

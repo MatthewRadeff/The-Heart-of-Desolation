@@ -30,12 +30,19 @@ public class PlatformGenerator : MonoBehaviour
     //widths between platforms
     private float[] m_platformWidths;
 
-
-
-
-
     // referencing the object pooler script
     public ObjectPooler[] m_theObjectPools;
+
+
+    // height range to raise platforms
+    private float m_minHeight;
+    public Transform m_maxHeightPoint;
+    private float m_maxHeight;
+    public float m_maxHeightChange;
+    private float m_heightChange;
+
+
+
 
 
 	// Use this for initialization
@@ -53,6 +60,11 @@ public class PlatformGenerator : MonoBehaviour
 
         }
 
+        // getting min and max height to use for placement of platforms
+        m_minHeight = transform.position.y;
+        m_maxHeight = m_maxHeightPoint.position.y;
+
+
 	}
 	
 	// Update is called once per frame
@@ -66,9 +78,25 @@ public class PlatformGenerator : MonoBehaviour
             // selecting a random platform in array
             m_platformSelector = Random.Range(0, m_theObjectPools.Length);
 
+            // getting the random height change 
+            m_heightChange = transform.position.y + Random.Range(m_maxHeightChange, -m_maxHeightChange);
+
+            // making sure the platforms arent spawning off the screen
+            if(m_heightChange > m_maxHeight)
+            {
+                // making sure its not too high
+                m_heightChange = m_maxHeight;
+            }
+            else if(m_heightChange < m_minHeight)
+            {
+                // making sure its not too low
+                m_heightChange = m_minHeight;
+            }
+
+
             // moving platform spawn location a certain distance from the last position taking in all the distances 
             // dividing by 2 makes the spawn location occur at the end of the platform, so at least no overlapping happens
-            transform.position = new Vector3(transform.position.x + (m_platformWidths[m_platformSelector] / 2) + m_distanceBetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (m_platformWidths[m_platformSelector] / 2) + m_distanceBetween, m_heightChange, transform.position.z);
 
 
             // creating the platform
