@@ -288,8 +288,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MyAssets\Scripts\Level\GameManager.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level\PlatformDestruction.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level\PlatformGenerator.cs" />
+    <Compile Include="Assets\MyAssets\Scripts\Level\ScoreManager.cs" />
+    <Compile Include="Assets\MyAssets\Scripts\Level\ScoreReader.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Misc\ButtonScript.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Misc\CameraController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Misc\ObjectPooler.cs" />
