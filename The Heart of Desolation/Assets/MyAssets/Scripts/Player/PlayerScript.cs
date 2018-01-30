@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -119,8 +120,20 @@ public class PlayerScript : MonoBehaviour
             m_jumpTimeCounter = m_jumpTime;
         }
 
+    }
+
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
     }
+
+
+
 
 
 }
