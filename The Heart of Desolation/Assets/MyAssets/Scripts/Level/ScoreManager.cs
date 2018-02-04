@@ -22,12 +22,12 @@ public class ScoreManager : MonoBehaviour
 
 
     // love meter % number
-    private float m_loveMeterAmount = 100.0f;
+    public float m_loveMeterAmount = 100.0f;
     public Text m_loveMeterText;
 
     // the love meter and its value
     public Image m_loveMeter;
-    private float m_tempMeterAmount = 1.0f;
+    public float m_tempMeterAmount = 1.0f;
 
 
 
@@ -79,6 +79,9 @@ public class ScoreManager : MonoBehaviour
             m_tempMeterAmount -= (0.05f) * Time.deltaTime;
             m_loveMeter.fillAmount = m_tempMeterAmount;
 
+            //Debug.Log(m_loveMeterAmount);
+            //Debug.Log(m_tempMeterAmount);
+
         }
         if(m_loveMeterAmount >= 100.0f)
         {
@@ -94,23 +97,39 @@ public class ScoreManager : MonoBehaviour
 
     }
 
+    // adding to score when player hits a love pickup
+    // fn takes in an int for the amount of points to give
     public void AddScore(int daysToAdd)
     {
         m_currentDaysCount += daysToAdd;
     }
 
+    // when love is picked up add to the text
     public void AddLove(int loveToAdd)
     {
         m_loveMeterAmount += loveToAdd;
         m_loveMeterText.text = m_loveMeterAmount.ToString("f0");
 
     }
-    public void AddLoveMetre(float metreToAdd)
+    // when love is picked up update the metre
+    public void AddLoveMetre(float meterToAdd)
     {
-        m_tempMeterAmount += metreToAdd;
+        m_tempMeterAmount += meterToAdd;
         m_loveMeter.fillAmount = m_tempMeterAmount;
     }
 
+    // when memory is picked up update text
+    public void SubtractLove(int loveToSubtract)
+    {
+        m_loveMeterAmount -= loveToSubtract;
+        m_loveMeterText.text = m_loveMeterAmount.ToString("f0");
+    }
+    // when memory is picked up update the love metre
+    public void SubtractLoveMeter(float meterToSubtract)
+    {
+        m_tempMeterAmount -= meterToSubtract;
+        m_loveMeter.fillAmount = m_tempMeterAmount;
 
+    }
 
 }

@@ -12,6 +12,10 @@ public class LoveMeter : MonoBehaviour
     // for the metre bar
     public float m_tempLoveToGive;
 
+    // amount to subtract from love metre text and bar
+    public int m_loveToSubtract;
+    public float m_tempLoveToSubtract;
+
     // reference to manager
     private ScoreManager m_theScoreManager;
 
@@ -34,13 +38,23 @@ public class LoveMeter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Love"))
         {
-            // add value to meter....?
+            // add value to score..bar and text
             m_theScoreManager.AddScore(m_loveToGive);
             m_theScoreManager.AddLove(m_loveToGive);
             m_theScoreManager.AddLoveMetre(m_tempLoveToGive);
+            // because the object will be pooled we are setting it to set active false
             gameObject.SetActive(false);
+        }
+        if(other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Memory"))
+        {
+            m_theScoreManager.SubtractLove(m_loveToSubtract);
+            m_theScoreManager.SubtractLoveMeter(m_tempLoveToSubtract);
+            gameObject.SetActive(false);
+            //Debug.Log(m_theScoreManager.m_loveMeterAmount);
+            //Debug.Log(m_theScoreManager.m_tempMeterAmount);
+            
         }
         
     }
