@@ -93,10 +93,10 @@ public class PlayerScript : MonoBehaviour
             {
                 // values for jumping
                 m_rb.velocity = new Vector2(m_rb.velocity.x, m_jumpForce);
-                Debug.Log("Player jumped!");
+                //Debug.Log("Player jumped!");
             }
 
-            Debug.Log("Player cant jump!");
+           // Debug.Log("Player cant jump!");
 
         }
 
