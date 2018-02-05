@@ -72,11 +72,11 @@ public class ScoreManager : MonoBehaviour
         if(m_loveMeterAmount > 0)
         {
             // % goes down a little amount each second
-            m_loveMeterAmount -= (0.05f * 100.0f) * Time.deltaTime;
+            m_loveMeterAmount -= (0.02f * 100.0f) * Time.deltaTime;
             m_loveMeterText.text = m_loveMeterAmount.ToString("f0");
 
             // the love meter bar also has to go down
-            m_tempMeterAmount -= (0.05f) * Time.deltaTime;
+            m_tempMeterAmount -= (0.02f) * Time.deltaTime;
             m_loveMeter.fillAmount = m_tempMeterAmount;
 
             //Debug.Log(m_loveMeterAmount);

@@ -289,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MyAssets\Scripts\Level\GameManager.cs" />
+    <Compile Include="Assets\MyAssets\Scripts\Level\LoveGenerator.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level\LoveMeter.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level\PlatformDestruction.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level\PlatformGenerator.cs" />

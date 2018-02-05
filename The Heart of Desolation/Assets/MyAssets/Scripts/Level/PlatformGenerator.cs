@@ -42,8 +42,10 @@ public class PlatformGenerator : MonoBehaviour
     private float m_heightChange;
 
 
+    private LoveGenerator m_theLoveGenerator;
 
-
+    // determines whether or not to spawn the pickups...for randomness
+    public float m_randomLovePickupThreshold;
 
 	// Use this for initialization
 	void Start ()
@@ -64,7 +66,8 @@ public class PlatformGenerator : MonoBehaviour
         m_minHeight = transform.position.y;
         m_maxHeight = m_maxHeightPoint.position.y;
 
-
+        // finding the only thing with the pickup generator
+        m_theLoveGenerator = FindObjectOfType<LoveGenerator>();
 	}
 	
 	// Update is called once per frame
@@ -110,6 +113,15 @@ public class PlatformGenerator : MonoBehaviour
             m_newPlatform.transform.rotation = transform.rotation;
             // also setting it to true because up until now it has been not active
             m_newPlatform.SetActive(true);
+
+
+
+            if(Random.Range(0f,100f) < m_randomLovePickupThreshold)
+            {
+                m_theLoveGenerator.SpawnLovePickups(new Vector3(transform.position.x,transform.position.y + 2.0f, transform.position.z));
+
+            }
+            
 
             // adding on half the distance from where the last platform was so the platforms dont overlap
             transform.position = new Vector3(transform.position.x + (m_platformWidths[m_platformSelector] / 2), transform.position.y, transform.position.z);
