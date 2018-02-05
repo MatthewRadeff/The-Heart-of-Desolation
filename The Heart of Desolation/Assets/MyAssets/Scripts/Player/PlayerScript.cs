@@ -24,6 +24,9 @@ public class PlayerScript : MonoBehaviour
     public float m_jumpTime;
     private float m_jumpTimeCounter;
 
+    // to help with grounded bug to check further if the player can jump 
+    private bool m_stoppedJumping;
+
 
     // rigidbody of the player 
     private Rigidbody2D m_rb;
@@ -56,6 +59,8 @@ public class PlayerScript : MonoBehaviour
         m_jumpTimeCounter = m_jumpTime;
 
         m_speedMilestoneCount = m_speedIncreaseMilestone;
+
+        m_stoppedJumping = true;
 	}
 	
 	// Update is called once per frame
@@ -93,6 +98,7 @@ public class PlayerScript : MonoBehaviour
             {
                 // values for jumping
                 m_rb.velocity = new Vector2(m_rb.velocity.x, m_jumpForce);
+                m_stoppedJumping = false;
                 //Debug.Log("Player jumped!");
             }
 
@@ -100,7 +106,7 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && !m_stoppedJumping)
         {
             if(m_jumpTimeCounter > 0)
             {
@@ -113,6 +119,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             m_jumpTimeCounter = 0;
+            m_stoppedJumping = true;
         }
 
         if(m_isGrounded)
