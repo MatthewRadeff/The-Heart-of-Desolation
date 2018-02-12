@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212549260842140392}
   - component: {fileID: 61034736103889310}
   - component: {fileID: 114786972638201006}
+  - component: {fileID: 114444916434055824}
   m_Layer: 0
   m_Name: Rose
   m_TagString: Love
@@ -67,6 +68,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.452756, y: 7.691334}
   m_EdgeRadius: 0
+--- !u!114 &114444916434055824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443893060109174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18031817060ba4a4983b3a8663b94bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_platformDestructionPoint: {fileID: 0}
 --- !u!114 &114786972638201006
 MonoBehaviour:
   m_ObjectHideFlags: 1

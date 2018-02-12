@@ -12,7 +12,6 @@ public class ObjectPooler : MonoBehaviour
 
     // list of objects to be pooled
     public List<GameObject> m_pooledObjects;
-    
 
 
 	// Use this for initialization
@@ -54,8 +53,5 @@ public class ObjectPooler : MonoBehaviour
         return m_obj;
 
     }
-
-
-
 
 }

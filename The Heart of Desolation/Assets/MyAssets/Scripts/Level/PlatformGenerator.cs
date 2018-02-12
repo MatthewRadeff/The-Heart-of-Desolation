@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformGenerator : MonoBehaviour
 {
 
-    // platform being generated ahead oof player
+    // platform being generated ahead of player
     public GameObject m_thePlatform;
 
     // point in front of us that objects will be starting to generate
@@ -43,9 +43,13 @@ public class PlatformGenerator : MonoBehaviour
 
 
     private LoveGenerator m_theLoveGenerator;
+    private MemoryGenerator m_theMemoryGenerator;
 
     // determines whether or not to spawn the pickups...for randomness
     public float m_randomLovePickupThreshold;
+
+    // determines whether or not to spawn the memories..random
+    public float m_randomMemoryPickupThreshold;
 
 	// Use this for initialization
 	void Start ()
@@ -68,7 +72,8 @@ public class PlatformGenerator : MonoBehaviour
 
         // finding the only thing with the pickup generator
         m_theLoveGenerator = FindObjectOfType<LoveGenerator>();
-	}
+        m_theMemoryGenerator = FindObjectOfType<MemoryGenerator>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -120,6 +125,10 @@ public class PlatformGenerator : MonoBehaviour
             {
                 m_theLoveGenerator.SpawnLovePickups(new Vector3(transform.position.x,transform.position.y + 2.0f, transform.position.z));
 
+            }
+            else if(Random.Range(0f, 100f) < m_randomMemoryPickupThreshold)
+            {
+                m_theMemoryGenerator.SpawnMemoryPickups(new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z));
             }
             
 
