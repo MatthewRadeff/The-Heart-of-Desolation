@@ -47,6 +47,18 @@ public class PlayerScript : MonoBehaviour
     // this helps check that the player can only jump if the feet are on top of the platform
     public float m_groundCheckRadius;
 
+
+    // audio clip for jump
+    public AudioClip m_playerJumpClip;
+
+    public AudioClip m_deathClip;
+
+    // death screen overlay
+    public GameObject m_deathScreen;
+
+    // getting all objects with audio sources in the game..in this case 1
+    private AudioSource[] mainSource;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -61,7 +73,11 @@ public class PlayerScript : MonoBehaviour
         m_speedMilestoneCount = m_speedIncreaseMilestone;
 
         m_stoppedJumping = true;
-	}
+
+        m_deathScreen.SetActive(false);
+        mainSource = AudioSource.FindObjectsOfType<AudioSource>() as AudioSource[];
+        Time.timeScale = 1;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -99,10 +115,9 @@ public class PlayerScript : MonoBehaviour
                 // values for jumping
                 m_rb.velocity = new Vector2(m_rb.velocity.x, m_jumpForce);
                 m_stoppedJumping = false;
-                //Debug.Log("Player jumped!");
+                AudioSource.PlayClipAtPoint(m_playerJumpClip, transform.position);
+               
             }
-
-           // Debug.Log("Player cant jump!");
 
         }
 
@@ -112,6 +127,7 @@ public class PlayerScript : MonoBehaviour
             {
                 m_rb.velocity = new Vector2(m_rb.velocity.x, m_jumpForce);
                 m_jumpTimeCounter -= Time.deltaTime;
+                
             }
 
         }
@@ -134,7 +150,15 @@ public class PlayerScript : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Death"))
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
+            foreach(AudioSource AS in mainSource)
+            {
+                AS.Stop();
+            }
+
+            AudioSource.PlayClipAtPoint(m_deathClip,transform.position);
+            Time.timeScale = 0;
+            m_deathScreen.SetActive(true);
         }
 
     }
