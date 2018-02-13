@@ -82,6 +82,8 @@ MonoBehaviour:
   m_tempLoveToGive: 0.05
   m_loveToSubtract: 0
   m_tempLoveToSubtract: 0
+  m_lovePickupClip: {fileID: 8300000, guid: 9756c4426ab2b6c4790a56c0ce97f73d, type: 3}
+  m_memoryPickupClip: {fileID: 0}
 --- !u!212 &212244194381769352
 SpriteRenderer:
   m_ObjectHideFlags: 1

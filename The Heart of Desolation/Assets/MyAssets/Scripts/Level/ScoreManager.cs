@@ -30,6 +30,12 @@ public class ScoreManager : MonoBehaviour
     public float m_tempMeterAmount = 1.0f;
 
 
+    public AudioClip m_deathClip;
+    public GameObject m_deathScreen;
+
+    // getting all objects with audio sources in the game..in this case 1
+    public AudioSource[] mainSource;
+   
 
 
     // Use this for initialization
@@ -41,7 +47,11 @@ public class ScoreManager : MonoBehaviour
         {
             m_longestDaysCount = PlayerPrefs.GetFloat("LongestRelationship");
         }
-	}
+
+        m_deathScreen.SetActive(false);
+        mainSource = AudioSource.FindObjectsOfType<AudioSource>() as AudioSource[];
+        Time.timeScale = 1;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -86,13 +96,26 @@ public class ScoreManager : MonoBehaviour
         if(m_loveMeterAmount >= 100.0f)
         {
             m_loveMeterAmount = 100.0f;
+            m_loveMeterText.text = m_loveMeterAmount.ToString("f0");
 
         }
-        else if(m_loveMeterAmount <= 0)
+        if(m_tempMeterAmount >= 1.0f)
         {
-            SceneManager.LoadScene("GameOver");
+            m_tempMeterAmount = 1.0f;
+            m_loveMeter.fillAmount = m_tempMeterAmount;
         }
-        
+        else if(m_tempMeterAmount <= 0)
+        {
+            //SceneManager.LoadScene("GameOver");
+            foreach (AudioSource AS in mainSource)
+            {
+                AS.Stop();
+             
+            }
+            AudioSource.PlayClipAtPoint(m_deathClip,transform.position);
+            Time.timeScale = 0;
+            m_deathScreen.SetActive(true);
+        }
 
 
     }

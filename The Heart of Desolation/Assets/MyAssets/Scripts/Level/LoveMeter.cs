@@ -19,8 +19,11 @@ public class LoveMeter : MonoBehaviour
     // reference to manager
     private ScoreManager m_theScoreManager;
 
+    // love pickup clip
+    public AudioClip m_lovePickupClip;
 
-
+    // memory hit clip
+    public AudioClip m_memoryPickupClip;
 
 	// Use this for initialization
 	void Start ()
@@ -46,14 +49,14 @@ public class LoveMeter : MonoBehaviour
             m_theScoreManager.AddLoveMetre(m_tempLoveToGive);
             // because the object will be pooled we are setting it to set active false
             gameObject.SetActive(false);
+            AudioSource.PlayClipAtPoint(m_lovePickupClip,transform.position);
         }
         if(other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Memory"))
         {
             m_theScoreManager.SubtractLove(m_loveToSubtract);
             m_theScoreManager.SubtractLoveMeter(m_tempLoveToSubtract);
-            gameObject.SetActive(false);
-            //Debug.Log(m_theScoreManager.m_loveMeterAmount);
-            //Debug.Log(m_theScoreManager.m_tempMeterAmount);
+            gameObject.SetActive(false);  
+            AudioSource.PlayClipAtPoint(m_memoryPickupClip,transform.position);
             
         }
         

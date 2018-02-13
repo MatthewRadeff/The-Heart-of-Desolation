@@ -18,6 +18,7 @@ public class MemoryGenerator : MonoBehaviour
         GameObject m_memoryPickup = m_memoryPool.GetPooledObject();
         m_memoryPickup.transform.position = startPosition;
         m_memoryPickup.SetActive(true);
+        m_memoryPickup.SetActiveRecursively(true);
 
        /* // generating the pickup on the left
         GameObject m_memoryPickup2 = m_memoryPool.GetPooledObject();
